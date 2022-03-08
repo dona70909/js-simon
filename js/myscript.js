@@ -19,3 +19,16 @@ function uniqueRandomNumbers(N,min,max){
 }
 
 console.log(uniqueRandomNumbers(5,1,100));
+
+function insertNumber(array,element){
+    for(let i = 0; i < array.length;i++){
+        let child = document.createElement("p");
+        let parent = document.getElementById(element);
+        parent.appendChild(child).innerHTML = array[i];
+    }
+
+    return child;
+}
+
+const numbers = uniqueRandomNumbers(5,1,100);
+insertNumber(numbers,"container-numbers");
