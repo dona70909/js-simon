@@ -18,21 +18,14 @@ function uniqueRandomNumbers(N,min,max){
     
 }
 
-//console.log(uniqueRandomNumbers(5,1,100));
-
 function insertNumber(array,element){
     for(let i = 0; i < array.length; i++){
         let child = document.createElement("p");
+        child.classList.add("m-0","p-4");
         let parent = document.getElementById(element);
         parent.appendChild(child).innerHTML = array[i];
     }
 }
-
-/* function cancelNumbers(element){
-    let parent = document.getElementById(element);
-    parent.innerHTML = " ";
-}  */
-
 
 const numbers = uniqueRandomNumbers(5,1,100);
 const time = 4000;
@@ -46,12 +39,8 @@ function cancelNumbers(){
 }
 
 
-
 const userNumbers = [];
 const timeOutInsert = setTimeout(userInsertNumber,time + 5);
-
-
-
 function userInsertNumber(){
     for(let i = 0; i < numbers.length; i++){
         let insertUserNumber = parseInt(prompt("Inserisci un numero"));
@@ -60,8 +49,8 @@ function userInsertNumber(){
     return userNumbers;
 }
 
-const timeOutCheck = setTimeout(checkNumbers,time + 2000);
 
+const timeOutCheck = setTimeout(checkNumbers,time + 2000);
 function checkNumbers(){
     let score = 0;
     console.log(userNumbers + " user numbers");
@@ -71,8 +60,9 @@ function checkNumbers(){
             score++;
         }
     }
-
+    
     console.log("Hai indovinato n." + score + " numeri");
+    document.getElementById("output-score").classList.add("p-4");
     document.getElementById("output-score").innerHTML = ("Hai indovinato n." + score + " numeri");
 }
 
