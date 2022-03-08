@@ -18,7 +18,7 @@ function uniqueRandomNumbers(N,min,max){
     
 }
 
-console.log(uniqueRandomNumbers(5,1,100));
+//console.log(uniqueRandomNumbers(5,1,100));
 
 function insertNumber(array,element){
     for(let i = 0; i < array.length; i++){
@@ -49,6 +49,9 @@ function cancelNumbers(){
 
 const userNumbers = [];
 const timeOutInsert = setTimeout(userInsertNumber,time + 5);
+
+
+
 function userInsertNumber(){
     for(let i = 0; i < numbers.length; i++){
         let insertUserNumber = parseInt(prompt("Inserisci un numero"));
@@ -57,6 +60,20 @@ function userInsertNumber(){
     return userNumbers;
 }
 
+const timeOutCheck = setTimeout(checkNumbers,time + 2000);
+
+function checkNumbers(){
+    let score = 0;
+    console.log(userNumbers + " user numbers");
+    console.log(numbers + " numeri");    
+    for(let i = 0; i < userNumbers.length; i++){
+        if (userNumbers.includes(numbers[i])){
+
+            score++;
+        }
+    }
+
+    console.log("Hai indovinato n." + score + " numeri");
+}
 
 
-//console.log( userInsertNumber(userNumbers,numbers));
