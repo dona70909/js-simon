@@ -1,10 +1,10 @@
 /**
- * Function that creates N unique numbers from minimun(min) value to N(maximun)
- * @param {*} N value of how many numbers you want 
- * @param {*} max max value of each number 
- * @param {*} min minimum value of each number
- * @returns {*} return an array of random Unique numbers
- */
+* Function that creates N unique numbers from minimun(min) value to N(maximun)
+* @param {*} N value of how many numbers you want 
+* @param {*} max max value of each number 
+* @param {*} min minimum value of each number
+* @returns {*} return an array of random Unique numbers
+*/
 
 function uniqueRandomNumbers(N,min,max){
     const arrayNumbers = [];
@@ -35,7 +35,7 @@ function insertNumber(array,element){
 
 
 const numbers = uniqueRandomNumbers(5,1,100);
-const time = 1500;
+const time = 4000;
 insertNumber(numbers,"container-numbers");
 
 
@@ -45,3 +45,18 @@ function cancelNumbers(){
     parent.innerHTML = " ";
 }
 
+
+
+const userNumbers = [];
+const timeOutInsert = setTimeout(userInsertNumber,time + 5);
+function userInsertNumber(){
+    for(let i = 0; i < numbers.length; i++){
+        let insertUserNumber = parseInt(prompt("Inserisci un numero"));
+        userNumbers.push(insertUserNumber);
+    }
+    return userNumbers;
+}
+
+
+
+//console.log( userInsertNumber(userNumbers,numbers));
