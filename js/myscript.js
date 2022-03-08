@@ -68,7 +68,6 @@ function checkNumbers(){
     console.log(numbers + " numeri");    
     for(let i = 0; i < userNumbers.length; i++){
         if (userNumbers.includes(numbers[i])){
-
             score++;
         }
     }
