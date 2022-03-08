@@ -73,6 +73,7 @@ function checkNumbers(){
     }
 
     console.log("Hai indovinato n." + score + " numeri");
+    document.getElementById("output-score").innerHTML = ("Hai indovinato n." + score + " numeri");
 }
 
 
